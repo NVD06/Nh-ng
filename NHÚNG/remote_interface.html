@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Interface</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      font-family: 'Arial', sans-serif;
+      color: #333;
+    }
+
+    .status {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      background-color: #f0f0f0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .status.connected {
+      color: #28a745;
+      background-color: #e9f7ef;
+      border: 1px solid #c3e6cb;
+    }
+
+    .status.disconnected {
+      color: #dc3545;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+    }
+
+    .controller {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto auto;
+      gap: 10px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button {
+      padding: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #upButton {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    #leftButton {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    #rightButton {
+      grid-column: 3;
+      grid-row: 3;
+    }
+
+    #downButton {
+      grid-column: 2;
+      grid-row: 4;
+    }
+
+    #spaceButton {
+      grid-column: span 3;
+      grid-row: 5;
+      padding: 15px 50px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    }
+  </style>
+</head>
+<body>
+  <div class="status" id="connectionStatus">Connecting to Firebase...</div>
+  <div class="controller">
+    <button class="button" id="upButton">↑</button>
+    <button class="button" id="leftButton">←</button>
+    <button class="button" id="rightButton">→</button>
+    <button class="button" id="downButton">↓</button>
+    <button class="button space" id="spaceButton">Space (Water Spray)</button>
+  </div>
+  <script type="module" src="firebaseConnection.js"></script>
+</body>
+</html>

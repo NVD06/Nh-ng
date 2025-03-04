@@ -1,0 +1,12 @@
+{
+  "controls": {
+    "down": 0,
+    "left": 0,
+    "right": 0,
+    "up": 0,
+    "waterSpray": 0
+  },
+  "test": {
+    "connection": "working"
+  }
+}
